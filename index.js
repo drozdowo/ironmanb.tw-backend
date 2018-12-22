@@ -1,10 +1,17 @@
 var express = require('express');
 var cors = require('cors');
 var app = express();
+var path = require(path);
 var router = express.Router();
 const axios = require('axios');
+import distloc from 'distloc'
+
 
 app.use(cors());
+
+app.get('*', function(req,res){
+    res.sendFile(path.resolve(__dirname, distloc))
+})
 
 app.listen('8080', () => {
     console.log('server listening on 8080...');
