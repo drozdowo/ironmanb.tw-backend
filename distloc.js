@@ -1,1 +1,5 @@
-export default '../../client/ironmanb.tw/dist';
+module.exports = { 
+    getDistPath: function(){
+    return '../../client/ironmanb.tw/dist';
+    }
+}

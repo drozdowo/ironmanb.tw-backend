@@ -1,16 +1,18 @@
 var express = require('express');
 var cors = require('cors');
 var app = express();
-var path = require(path);
+var path = require('path');
 var router = express.Router();
 const axios = require('axios');
-import distloc from 'distloc'
+var distloc = require('./distloc');
 
 
 app.use(cors());
 
+console.log(distloc.getDistPath());
+
 app.get('*', function(req,res){
-    res.sendFile(path.resolve(__dirname, distloc))
+    res.sendFile(path.resolve(__dirname, distloc.getDistPath()))
 })
 
 app.listen('8080', () => {
